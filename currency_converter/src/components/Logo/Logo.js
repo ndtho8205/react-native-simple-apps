@@ -3,8 +3,12 @@ import { View, ImageBackground, Image, Text } from 'react-native';
 
 import styles from './styles';
 
-const Logo = () => (
-  <View style={styles.wrapper}>
+type Props = {
+  style?: {},
+};
+
+const Logo = (props: Props) => (
+  <View style={[styles.wrapper, props.style]}>
     <ImageBackground
       source={require('./images/background.png')}
       resizeMode="contain"
@@ -20,5 +24,9 @@ const Logo = () => (
     <Text style={styles.text}>Currency Converter</Text>
   </View>
 );
+
+Logo.defaultProps = {
+  style: {},
+};
 
 export default Logo;
