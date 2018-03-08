@@ -13,6 +13,7 @@ const styles = EStyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginVertical: 8,
+    width: '70%',
   },
   buttonWrapper: {
     alignItems: 'center',
@@ -37,7 +38,9 @@ const styles = EStyleSheet.create({
     backgroundColor: '$inputBackgroundColor',
     paddingHorizontal: 8,
     fontSize: 16,
-
+  },
+  inputDisabled: {
+    backgroundColor: '$dividerColor',
   },
 });
 
