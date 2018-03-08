@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { View } from 'react-native';
 
 import InputWithButton from '../../components/InputWithButton';
@@ -13,16 +13,51 @@ type Props = {
   defaultQuotePrice?: string,
 }
 
-const CurrencyConverterForm = (props: Props) => (
-  <View style={[styles.wrapper, props.style]}>
-    <InputWithButton buttonText={props.base} defaultValue={props.defaultBasePrice} />
-    <InputWithButton
-      buttonText={props.quote}
-      value={props.defaultQuotePrice}
-      editable={false}
-    />
-  </View>
-);
+type State = {
+  basePrice: number,
+  quotePrice: number,
+};
+
+class CurrencyConverterForm extends Component<Props, State> {
+  state = {
+    basePrice: 0,
+    quotePrice: 0,
+  }
+
+  constructor(props) {
+    super(props);
+
+    this.handleBasePressed = this.handleBasePressed.bind(this);
+    this.handleBaseTextChanged = this.handleBaseTextChanged.bind(this);
+    this.handleQuoteTextChanged = this.handleQuoteTextChanged.bind(this);
+  }
+
+  handleBasePressed() {
+  }
+
+  handleBaseTextChanged() {
+  }
+
+  handleQuoteTextChanged() {
+  }
+
+  render() {
+    const {
+      style, base, quote, defaultBasePrice, defaultQuotePrice,
+    } = this.props;
+
+    return (
+      <View style={[styles.wrapper, style]}>
+        <InputWithButton buttonText={base} defaultValue={defaultBasePrice} />
+        <InputWithButton
+          buttonText={quote}
+          value={defaultQuotePrice}
+          editable={false}
+        />
+      </View>
+    );
+  }
+}
 
 CurrencyConverterForm.defaultProps = {
   style: {},
