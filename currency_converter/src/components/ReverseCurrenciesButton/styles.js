@@ -2,12 +2,18 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 
 const styles = EStyleSheet.create({
   wrapper: {
-    flex: 1,
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-
-    borderColor: 'red',
-    borderWidth: 1,
+    marginVertical: 16,
+  },
+  icon: {
+    width: 20,
+    marginRight: 8,
+  },
+  text: {
+    color: '$text',
+    fontSize: 14,
   },
 });
 

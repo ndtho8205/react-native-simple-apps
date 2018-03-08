@@ -10,7 +10,6 @@ EStyleSheet.build({
   $primaryText: '#212121',
   $secondaryText: '#757575',
   $dividerColor: '#bdbdbd',
-
 });
 
 const styles = EStyleSheet.create({
