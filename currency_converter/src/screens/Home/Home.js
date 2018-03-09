@@ -3,6 +3,8 @@ import { View, StatusBar } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 import Logo from '../../components/Logo';
+import SettingsButton from '../../components/SettingsButton';
+
 import CurrencyConverterForm from '../../containers/CurrencyConverterForm';
 
 
@@ -22,6 +24,8 @@ const TEMP_QUOTE_PRICE = '200000';
 const Home = (props: Props) => (
   <View style={[styles.wrapper, props.style]}>
     <StatusBar backgroundColor={EStyleSheet.value('$darkPrimaryColor')} />
+
+    <SettingsButton style={styles.settingsButton}/>
 
     <Logo />
 

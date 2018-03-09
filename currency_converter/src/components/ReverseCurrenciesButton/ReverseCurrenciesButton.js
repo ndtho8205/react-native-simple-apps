@@ -12,12 +12,14 @@ const ReverseCurrenciesButton = (props: Props) => {
   const { style, onPress } = props;
 
   return (
-    <TouchableOpacity onPress={onPress}>
-      <View style={[styles.wrapper, style]}>
-        <Image source={require('./images/icon.png')} resizeMode="contain" style={styles.icon} />
-        <Text style={styles.text}>Reverse currencies</Text>
-      </View>
-    </TouchableOpacity>
+    <View style={style}>
+      <TouchableOpacity onPress={onPress}>
+        <View style={[styles.wrapper]}>
+          <Image source={require('./images/icon.png')} resizeMode="contain" style={styles.icon} />
+          <Text style={styles.text}>Reverse currencies</Text>
+        </View>
+      </TouchableOpacity>
+    </View>
   );
 };
 
