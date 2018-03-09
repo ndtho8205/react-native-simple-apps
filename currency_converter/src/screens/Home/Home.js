@@ -21,25 +21,30 @@ const TEMP_BASE_PRICE = '100';
 const TEMP_QUOTE_PRICE = '200000';
 
 
-const Home = (props: Props) => (
-  <View style={[styles.wrapper, props.style]}>
-    <StatusBar backgroundColor={EStyleSheet.value('$darkPrimaryColor')} />
+const Home = (props: Props) => {
+  const handleSettingsButtonPressed = () => {
+  };
 
-    <SettingsButton style={styles.settingsButton}/>
+  return (
+    <View style={[styles.wrapper, props.style]}>
+      <StatusBar backgroundColor={EStyleSheet.value('$darkPrimaryColor')} />
 
-    <Logo />
+      <SettingsButton style={styles.settingsButton} onPress={handleSettingsButtonPressed} />
 
-    <CurrencyConverterForm
-      base={TEMP_BASE_CURRENCY}
-      quote={TEMP_QUOTE_CURRENCY}
-      rate={TEMP_EXCHANGE_RATE}
-      defaultBasePrice={TEMP_BASE_PRICE}
-      defaultQuotePrice={TEMP_QUOTE_PRICE}
-    />
+      <Logo />
+
+      <CurrencyConverterForm
+        base={TEMP_BASE_CURRENCY}
+        quote={TEMP_QUOTE_CURRENCY}
+        rate={TEMP_EXCHANGE_RATE}
+        defaultBasePrice={TEMP_BASE_PRICE}
+        defaultQuotePrice={TEMP_QUOTE_PRICE}
+      />
 
 
-  </View>
-);
+    </View>
+  );
+};
 
 Home.defaultProps = {
   style: {},
