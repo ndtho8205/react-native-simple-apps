@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, StatusBar, Text, FlatList } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
+import CurrencyList from '../../container/CurrencyList';
 import currencies from '../../data/currencies';
 
 import styles from './styles';
@@ -10,7 +11,7 @@ type Props = {
   style: {},
 };
 
-class CurrencyList extends Component<Props> {
+class CurrencySelection extends Component<Props> {
   render() {
     const { style } = this.props;
 
@@ -18,18 +19,14 @@ class CurrencyList extends Component<Props> {
       <View style={[styles.wrapper, style]}>
         <StatusBar backgroundColor={EStyleSheet.value('$darkPrimaryColor')} />
 
-        <FlatList
-          data={currencies}
-          renderItem={({ item }) => <Text>{item}</Text>}
-          keyExtractor={item => item}
-        />
+        <CurrencyList data={currencies} />
       </View>
     );
   }
 }
 
-CurrencyList.defaultProps = {
+CurrencySelection.defaultProps = {
   style: {},
 };
 
-export default CurrencyList;
+export default CurrencySelection;
